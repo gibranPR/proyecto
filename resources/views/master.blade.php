@@ -26,7 +26,9 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Carreras<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Ver carreras</a></li>
+            @foreach(App\Carrera::get() as $c)
+            <li><a href="{{url('materias')}}/{{$c->id}}">{{$c->nombre}}</a></li>
+            @endforeach
           </ul>
         </li>
       </ul>
